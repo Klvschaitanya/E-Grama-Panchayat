@@ -1,0 +1,14 @@
+const [presentUser,setpresentUser]=useState(null);
+
+  useEffect(()=>{auth.onAuthStateChanged(
+    user=>{if(user){
+      setpresentUser({
+        uid:user.uid,
+        email:user.email
+      });
+    }
+    else{
+       setpresentUser(null);
+    }
+  }
+  )},[])
